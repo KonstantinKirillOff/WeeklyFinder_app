@@ -40,11 +40,13 @@ class ViewController: UIViewController {
         guard let date = calendar.date(from: dateComponents) else { return }
         
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU") // локализуем прилежение
         dateFormatter.dateFormat = "EEEE"
         
         let weekDay = dateFormatter.string(from: date)
+        let capitalizedWeekday = weekDay.capitalized //делаем первую буквы заглавной
         
-        resultLabel.text = weekDay
+        resultLabel.text = capitalizedWeekday
         
     }
     
